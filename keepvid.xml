@@ -17,47 +17,13 @@
       </inputs>
       <execute><![CDATA[
 
-function inbtwn(a,b,c){ 
-    try{ 
-        var a1 = a.split(b);
-        var a2 = a1[1].split(c);
-         return a2[0];
-     } 
-    catch(err){return ''; }
-} 
-
-function inbtwn2(a,b,c){ 
-    try{
-    var a1 = a.split(b);
- var a2 = a1[2].split(c);
- return a2[0];
- }
- catch(err) {return ''; } 
-} 
-
-
-
 var keepvid_url;
 if(url.toLowerCase().match('youtube.com/')){ 
-var querystring = "select * from html where url = '"+url+"' and xpath='*'";
-var results = y.query(querystring).results;
-var src = response.object = results.content.toString()
+var querystring = "select match8, match5, match2 from regex where expression="(&fmt_list=)([^&]*)(.*)(&t=)([^&]*)(.*)(video_id=)([^&]*)(&.*)" and text in (select content from html where url='" + url + '"')
+
+keepvid_url = y.query(querystring).results;
 
 
-    var v = inbtwn(src, 'video_id=', '&');
-    var t = inbtwn(src, '&t=', '&');
-    var fl = inbtwn(src, '&fmt_list=', '&');
-    var title = inbtwn2(src, 'title=%22', '%22');
-    if(title == ''){ 
-    title = inbtwn(src, '%3Ch1 id=%22vt%22%3E', '%3C');
-    };
-    if(v != '' && t != ''){
-        keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch%3Fv%3D'+v+'&vid='+v+'&tid='+t+'&flid='+fl+'&titleid='+title;
-    }
-    else{
-        keepvid_url ='http://www.keepvid.com/?url='+escape(url);
-    }
-    keepvid_url = src;
 }
 else{ 
     keepvid_url='http://www.keepvid.com/?url='+escape(url);
