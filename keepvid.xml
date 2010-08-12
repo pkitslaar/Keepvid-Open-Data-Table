@@ -57,6 +57,7 @@ var src = response.object = results.toString()
     else{
         keepvid_url ='http://www.keepvid.com/?url='+escape(url);
     }
+    keepvid_url = src;
 }
 else{ 
     keepvid_url='http://www.keepvid.com/?url='+escape(url);
