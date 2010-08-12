@@ -41,7 +41,7 @@ var keepvid_url;
 if(url.toLowerCase().match('youtube.com/')){ 
 var querystring = "select * from html where url = '"+url+"' and xpath='*'";
 var results = y.query(querystring).results;
-var src = response.object = results
+var src = response.object = results.toString()
 
 
     var v = inbtwn(src, 'video_id=', '&');
