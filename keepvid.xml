@@ -19,7 +19,7 @@
 
 var keepvid_url;
 if(url.toLowerCase().match('youtube.com/')){ 
-var querystring = "select match8, match5, match2 from regex where expression='(&fmt_list=)([^&]*)(.*)(&t=)([^&]*)(.*)(video_id=)([^&]*)(&.*)' and text in (select content from html where url='" + url + "')";
+var querystring = "use 'http://www.datatables.org/regex/regex.xml';select match8, match5, match2 from regex where expression='(&fmt_list=)([^&]*)(.*)(&t=)([^&]*)(.*)(video_id=)([^&]*)(&.*)' and text in (select content from html where url='" + url + "')";
 
 keepvid_url = y.query(querystring).results;
 
