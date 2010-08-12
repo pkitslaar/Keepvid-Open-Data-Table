@@ -4,7 +4,7 @@
     <sampleQuery> select * from {table}</sampleQuery>
   </meta>
   <bindings>
-    <select itemPath="birthdays.person" produces="XML">
+    <select produces="XML">
       <urls>
         <url></url>
       </urls>
