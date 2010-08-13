@@ -53,7 +53,7 @@ var keepvid_result = y.query("select * from html where url='" + keepvid_url + "'
 
 var mp4_link = keepvid_result.a.@['href']
 
-response.object = mp4_link
+response.object = mp4_link.toString()
 
 
       ]]></execute>
