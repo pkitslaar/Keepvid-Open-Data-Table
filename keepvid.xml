@@ -23,10 +23,10 @@ var querystring = "use 'http://www.datatables.org/regex/regex.xml';select match8
 
 var results= y.query(querystring).results;
 
-var video_id = results.matches.match8;
-var signature = results.matches.match5;
-var fmt_list= results.matches.match2;
-keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch?v='+video_id+'&vid='+video_id+'&tid='+signature+'&flid='+fmt_list +'&titleid='+'Foo';
+var video_id = results.matches.match8.toString();
+var signature = results.matches.match5.toString();
+var fmt_list= results.matches.match2.toString();
+keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch?v='+video_id+ '&vid='+video_id+'&tid='+signature+'&flid='+fmt_list +'&titleid='+'Foo';
 
 }
 else{ 
