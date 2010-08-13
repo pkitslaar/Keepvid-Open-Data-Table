@@ -29,7 +29,6 @@ var fmt_list= results.matches.match2.toString();
 
 var youtube_query = "use 'http://www.datatables.org/youtube/youtube.video.xml'; select title from youtube.video where id='" + video_id + "'";
 var title = y.query(youtube_query).results.video.title
-y.log(title)
 
 keepvid_url  = 'http://www.keepvid.com/?url='
 
@@ -38,7 +37,7 @@ youtube_url += '%3Fv%3D'+video_id;
 youtube_url += '&vid='+video_id;
 youtube_url += '&tid='+signature;
 youtube_url += '&flid='+fmt_list;
-youtube_url += '&titleid='+'Foo';
+youtube_url += '&titleid='+ title;
 
 keepvid_url='http://www.keepvid.com/?url='+encodeURI(youtube_url);
 
