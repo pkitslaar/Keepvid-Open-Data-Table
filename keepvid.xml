@@ -36,7 +36,7 @@ youtube_url += '&tid='+signature;
 youtube_url += '&flid='+fmt_list;
 youtube_url += '&titleid='+'Foo';
 
-keepvid_url='http://www.keepvid.com/?url='+escape(youtube_url);
+keepvid_url='http://www.keepvid.com/?url='+encodeURI(youtube_url);
 
 
 }
