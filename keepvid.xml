@@ -39,10 +39,7 @@ else{
     keepvid_url='http://www.keepvid.com/?url='+escape(url);
 }
 
-response.object = encodeURI(keepvid_url)
-
-
-
+response.object = keepvid_url
 
 
       ]]></execute>
