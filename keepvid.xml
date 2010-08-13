@@ -40,8 +40,8 @@ else{
 }
 
 
-
-response.object = y.query("select * from html where url='" + keepvid_url + "'").results
+response.object = keepvid_url.toString()
+//response.object = y.query("select * from html where url='" + keepvid_url + "'").results
 
       ]]></execute>
     </select>
