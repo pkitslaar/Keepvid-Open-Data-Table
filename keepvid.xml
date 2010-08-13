@@ -29,7 +29,7 @@ var fmt_list= results.matches.match2.toString();
 
 keepvid_url  = 'http://www.keepvid.com/?url=http://www.youtube.com/watch' 
 keepvid_url += '%3Fv%3D'+video_id;
-keepvid_url += '&vid='+video_id;
+keepvid_url += "&vid="+video_id;
 keepvid_url += '&tid='+signature;
 keepvid_url += '&flid='+fmt_list;
 keepvid_url += '&titleid='+'Foo';
