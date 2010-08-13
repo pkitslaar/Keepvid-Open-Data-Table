@@ -50,9 +50,10 @@ else{
 
 //response.object = keepvid_url.toString()
 var keepvid_result = y.query("select * from html where url='" + keepvid_url + "' and xpath='//div[@id=\"links-c\"]/div[@id=\"dl_mp4high\"]/a'").results
-y.log(keepvid_result.a.@['href'])
 
-response.object = keepvid_result
+var mp4_link = keepvid_result.a.@['href']
+
+response.object = mp4_link
 
 
       ]]></execute>
