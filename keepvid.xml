@@ -26,7 +26,7 @@ var results= y.query(querystring).results;
 var fmt_list = results.match8;
 var signature = results.match5;
 var video_id = results.match2;
-keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch%3Fv%3D'+video_id+'&vid='+vide_id+'&tid='+signature+'&flid='+fmt_list +'&titleid='+'Foo';
+keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch%3Fv%3D'+video_id+'&vid='+video_id+'&tid='+signature+'&flid='+fmt_list +'&titleid='+'Foo';
 
 }
 else{ 
