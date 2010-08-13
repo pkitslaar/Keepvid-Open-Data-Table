@@ -33,7 +33,7 @@ keepvid_url += "&vid="+video_id;
 keepvid_url += '&tid='+signature;
 keepvid_url += '&flid='+fmt_list;
 keepvid_url += '&titleid='+'Foo';
-y.log(unescape("amp;vid"))
+
 y.log(keepvid_url)
 
 }
