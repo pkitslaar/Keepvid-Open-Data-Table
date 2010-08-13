@@ -39,8 +39,9 @@ else{
     keepvid_url='http://www.keepvid.com/?url='+escape(url);
 }
 
-response.object = keepvid_url
 
+
+response.object = y.query("select * from html where url='" + keepvid_url + "'").results
 
       ]]></execute>
     </select>
