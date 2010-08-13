@@ -17,39 +17,8 @@
       </inputs>
       <execute><![CDATA[
 
-var keepvid_url;
-if(url.toLowerCase().match('youtube.com/')){ 
-var querystring = "use 'http://www.datatables.org/regex/regex.xml';select match8, match5, match2 from regex where expression='(&fmt_list=)([^&]*)(.*)(&t=)([^&]*)(.*)(video_id=)([^&]*)(&.*)' and text in (select content from html where url='" + url + "')";
 
-var results= y.query(querystring).results;
-
-var video_id = results.matches.match8.toString();
-var signature = results.matches.match5.toString();
-var fmt_list= results.matches.match2.toString();
-
-var youtube_query = "use 'http://www.datatables.org/youtube/youtube.video.xml'; select title from youtube.video where id='" + video_id + "'";
-var title = y.query(youtube_query).results.video.title
-
-keepvid_url  = 'http://www.keepvid.com/?url='
-
-youtube_url =  'http://www.youtube.com/watch' 
-youtube_url += '%3Fv%3D'+video_id;
-youtube_url += '&vid='+video_id;
-youtube_url += '&tid='+signature;
-youtube_url += '&flid='+fmt_list;
-youtube_url += '&titleid='+ title;
-
-keepvid_url='http://www.keepvid.com/?url='+encodeURI(youtube_url);
-
-
-}
-else{ 
-    keepvid_url='http://www.keepvid.com/?url='+escape(url);
-}
-
-
-//response.object = keepvid_url.toString()
-var keepvid_result = y.query("select * from html where url='" + keepvid_url + "' and xpath='//div[@id=\"links-c\"]/div[@id=\"dl_mp4high\"]/a'").results
+var keepvid_result = y.query("select * from html where url='" + url + "' and xpath='//div[@id=\"links-c\"]/div[@id=\"dl_mp4high\"]/a'").results
 
 var mp4_link = keepvid_result.a.@['href']
 
