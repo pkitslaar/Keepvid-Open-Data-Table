@@ -49,7 +49,8 @@ else{
 
 
 //response.object = keepvid_url.toString()
-response.object = y.query("select * from html where url='" + keepvid_url + "' and xpath='//div[@id=\"links-c\"]/div[@id=\"dl_mp4high\"]/a'").results.results.a['href']
+response.object = y.query("select * from html where url='" + keepvid_url + "' and xpath='//div[@id=\"links-c\"]/div[@id=\"dl_mp4high\"]/a'").results.results.a
+
 
       ]]></execute>
     </select>
