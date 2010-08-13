@@ -21,8 +21,12 @@ var keepvid_url;
 if(url.toLowerCase().match('youtube.com/')){ 
 var querystring = "use 'http://www.datatables.org/regex/regex.xml';select match8, match5, match2 from regex where expression='(&fmt_list=)([^&]*)(.*)(&t=)([^&]*)(.*)(video_id=)([^&]*)(&.*)' and text in (select content from html where url='" + url + "')";
 
-keepvid_url = y.query(querystring).results;
+var results= y.query(querystring).results;
 
+var fmt_list = results.match8;
+var signature = results.match5;
+var video_id = results.match2;
+keepvid_url = 'http://www.keepvid.com/?url=http://www.youtube.com/watch%3Fv%3D'+video_id+'&vid='+vide_id+'&tid='+signature+'&flid='+fmt_list +'&titleid='+'Foo';
 
 }
 else{ 
