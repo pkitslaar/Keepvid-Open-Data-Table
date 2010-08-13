@@ -29,7 +29,7 @@ var fmt_list= results.matches.match2.toString();
 
 var youtube_query = "use 'http://www.datatables.org/youtube/youtube.video.xml'; select title from youtube.video where id='" + video_id + "'";
 var title = y.query(youtube_query).results.video.title
-log(title)
+y.log(title)
 
 keepvid_url  = 'http://www.keepvid.com/?url='
 
