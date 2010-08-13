@@ -41,7 +41,7 @@ else{
 
 
 //response.object = keepvid_url.toString()
-response.object = y.query("select * from html where url='" + encodURI(keepvid_url) + "'").results
+response.object = y.query("select * from html where url='" + encodeURI(keepvid_url) + "'").results
 
       ]]></execute>
     </select>
