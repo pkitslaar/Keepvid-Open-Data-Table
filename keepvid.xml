@@ -27,12 +27,17 @@ var video_id = results.matches.match8.toString();
 var signature = results.matches.match5.toString();
 var fmt_list= results.matches.match2.toString();
 
-keepvid_url  = 'http://www.keepvid.com/?url=http://www.youtube.com/watch' 
-keepvid_url += '%3Fv%3D'+video_id;
-keepvid_url += '&vid='+video_id;
-keepvid_url += '&tid='+signature;
-keepvid_url += '&flid='+fmt_list;
-keepvid_url += '&titleid='+'Foo';
+keepvid_url  = 'http://www.keepvid.com/?url='
+
+youtube_url =  'http://www.youtube.com/watch' 
+youtube_url += '%3Fv%3D'+video_id;
+youtube_url += '&vid='+video_id;
+youtube_url += '&tid='+signature;
+youtube_url += '&flid='+fmt_list;
+youtube_url += '&titleid='+'Foo';
+
+keepvid_url='http://www.keepvid.com/?url='+escape(youtube_url);
+
 
 }
 else{ 
@@ -41,7 +46,7 @@ else{
 
 
 //response.object = keepvid_url.toString()
-response.object = y.query("select * from html where url='" + encodeURI(keepvid_url) + "'").results
+response.object = y.query("select * from html where url='" + keepvid_url + "'").results
 
       ]]></execute>
     </select>
