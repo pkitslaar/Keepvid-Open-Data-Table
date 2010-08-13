@@ -4,7 +4,7 @@
     <sampleQuery> select * from {table}</sampleQuery>
   </meta>
   <bindings>
-    <select produces="JSON">
+    <select produces="XML">
       <urls>
         <url></url>
       </urls>
